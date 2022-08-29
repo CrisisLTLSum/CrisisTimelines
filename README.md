@@ -64,6 +64,33 @@ For inference, take a look at [inference.sh](timeline-extraction/bert/inference.
 
 
 ### Timeline Summarization:
+Code to run experiments for the timeline summarization task can be found in [timeline-summarization](timeline-summarization).
+
+1) Naive baselines: To run the naive baseline experiments, you simply have to run `python simple_baselines.py`. This will output 3 files: `first_tweet_baseline.txt`, `last_tweet_baseline.txt`, and `random_tweet_baseline.txt` for each of the baselines, respectively. 
+
+2) Fine-tuning BART/Distill-BART: To fine-tune BART or Distill-BART, take a look at [run_summarization.sh](timeline-summarization/run_summarization.sh)
+
+3) Inference: The inference could be run in two modes: a) Oracle; b) After timeline extraction.
+
+```bash
+
+python run_summarization.py \
+    --model_name_or_path model_dir \
+    --do_predict \
+    --validation_file data/dev.sum.bert.relevant.json \ # To run Oracle, simply change this to data/dev.sum.json
+    --test_file  data/dev.sum.bert.relevant.json \ # To run Oracle, simply change this to data/dev.sum.json
+    --text_column timeline \
+    --summary_column summary \
+    --per_device_eval_batch_size 16 \
+    --output_dir model_dir\
+    --num_beams 4 \
+    --max_target_length 512 \
+    --predict_with_generate \
+    --output_file_name dev.sum.bert.relevant.txt \
+    --overwrite_cache
+```
+
+More details on inference could be found in [generate.sh](timeline-summarization/generate.sh)
 
 
 ## License:
