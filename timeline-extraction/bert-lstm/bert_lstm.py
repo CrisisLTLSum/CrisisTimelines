@@ -282,7 +282,7 @@ if __name__ == '__main__':
             if dev_results['Avg Timeline Accuracy'] > best_dev_acc:
                 early_stopping = 0
                 best_dev_acc = dev_results['Avg Timeline Accuracy']
-                torch.save(model.state_dict(), f'checkpoints_new/checkpoint-best')
+                torch.save(model.state_dict(), f'/scratch/ba63/CrisisLTLSum/timeline-extraction/bert-lstm/checkpoints/checkpoint-best')
             else:
                 early_stopping += 1
 
@@ -290,7 +290,7 @@ if __name__ == '__main__':
             eval_losses.append(dev_loss)
 
             print(f'Epoch: {(epoch + 1)}')
-            torch.save(model.state_dict(), f'checkpoints_new/checkpoint-{epoch + 1}')
+            torch.save(model.state_dict(), f'/scratch/ba63/CrisisLTLSum/timeline-extraction/bert-lstm/checkpoints/checkpoint-{epoch + 1}')
             print(f'\tTrain Loss: {train_loss:.4f}   |   Dev Loss: {dev_loss:.4f}   |   Best Acc: {best_dev_acc:.4f}')
 
             if early_stopping > patience:
