@@ -1,7 +1,20 @@
+#!/bin/bash
+#SBATCH -p nvidia
+# use gpus
+#SBATCH --gres=gpu:1
+# memory
+#SBATCH --mem=120000
+# Walltime format hh:mm:ss
+#SBATCH --time=11:30:00
+# Output and error files
+#SBATCH -o job.%J.out
+#SBATCH -e job.%J.err
+
+
 python -W ignore bert_lstm.py \
-    --bert_model bert-base-uncased \
-    --train_file /home/balhafni/timeline-summarization/new_data/train.json \
-    --dev_file /home/balhafni/timeline-summarization/new_data/dev.json \
+    --bert_model  /scratch/ba63/BERT_models/bert-base-uncased \
+    --train_file /scratch/ba63/CrisisLTLSum/data/train.json \
+    --dev_file /scratch/ba63/CrisisLTLSum/data/dev.json \
     --num_epochs 30 \
     --learning_rate 5e-5 \
     --hidd_size 128 \
@@ -9,5 +22,5 @@ python -W ignore bert_lstm.py \
     --batch_size 16 \
     --dropout 0.1 \
     --do_predict \
-    --checkpoint checkpoints_new/checkpoint-best \
+    --checkpoint /scratch/ba63/CrisisLTLSum/timeline-extraction/bert-lstm/checkpoints/checkpoint-best \
     --seed 42
