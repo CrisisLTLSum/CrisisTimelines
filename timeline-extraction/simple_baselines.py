@@ -75,8 +75,8 @@ def get_majority_baseline(data):
 
 
 if __name__ == '__main__':
-    train_dataset = read_data('/home/balhafni/timeline-summarization/new_data/train.json')
-    dev_dataset = read_data('/home/balhafni/timeline-summarization/new_data/dev.json')
+    train_dataset = read_data('/scratch/ba63/CrisisLTLSum/data/train.json')
+    dev_dataset = read_data('/scratch/ba63/CrisisLTLSum/data/dev.json')
 
     all_0 = simple_baseline(dev_dataset, 0)
     all_1 = simple_baseline(dev_dataset, 1)
