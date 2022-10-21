@@ -41,7 +41,6 @@ class TimelinePreprocess:
             else:
                 context.append(clean_tweet)
 
-        # import pdb; pdb.set_trace()
         assert len(processed_timeline) == len(timeline_tweets) == len(label_ids)
 
         all_seeds = [x[0] for x in processed_timeline]
@@ -132,3 +131,4 @@ class TimelineDataset(Dataset):
 
     def __len__(self):
         return len(self.examples)
+
