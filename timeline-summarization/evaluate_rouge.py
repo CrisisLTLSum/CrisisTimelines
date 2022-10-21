@@ -25,7 +25,6 @@ if __name__ == '__main__':
 
     # gold = read_gold(args.gold)[:132]
     # preds = read_preds(args.preds)[:132]
-
     gold = read_gold(args.gold)
     preds = read_preds(args.preds)
     assert len(preds) == len(gold)
