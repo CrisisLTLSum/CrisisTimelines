@@ -43,12 +43,12 @@ def write_data(summaries, path):
 
 
 if __name__ == '__main__':
-    data = read_data('/home/balhafni/timeline-summarization/new_data/test.json')
+    data = read_data('/scratch/ba63/CrisisLTLSum/data/dev.json')
     first_tweet_summaries = first_tweet_baseline(data)
     last_tweet_summaries = last_tweet_baseline(data)
     random_tweet_summaries = random_tweet_baseline(data)
 
     assert len(first_tweet_summaries) == len(last_tweet_summaries) == len(random_tweet_summaries) == len(data)
-    write_data(first_tweet_summaries, 'models_new/first_tweet_baseline.test.txt')
-    write_data(last_tweet_summaries, 'models_new/last_tweet_baseline.test.txt')
-    write_data(random_tweet_summaries, 'models_new/random_tweet_baseline.test.txt')
+    write_data(first_tweet_summaries, '/scratch/ba63/CrisisLTLSum/timeline-summarization/baselines/first_tweet_baseline.dev.txt')
+    write_data(last_tweet_summaries, '/scratch/ba63/CrisisLTLSum/timeline-summarization/baselines/last_tweet_baseline.dev.txt')
+    write_data(random_tweet_summaries, '/scratch/ba63/CrisisLTLSum/timeline-summarization/baselines/random_tweet_baseline.dev.txt')
