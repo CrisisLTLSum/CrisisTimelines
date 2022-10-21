@@ -99,6 +99,4 @@ This repo is available under the MIT license. See the [LICENSE](LICENSE) for mor
 
 
 ## Citations:
-If you find the code or data in this repo helpful, please cite [our paper]():
-
-ADD BIBTEX
+If you find the code or data in this repo helpful, please cite [our paper]().
