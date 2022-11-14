@@ -1,12 +1,12 @@
 # CrisisLTLSum: A Benchmark for Local Crisis Event Timeline Extraction and Summarization
 
-This repo contains code and pretrained models to reproduce results in our paper [CrisisLTLSum: A Benchmark for Local Crisis Event Timeline Extraction and Summarization]().
+This repo contains code and pretrained models to reproduce results in our paper [CrisisLTLSum: A Benchmark for Local Crisis Event Timeline Extraction and Summarization](https://arxiv.org/pdf/2210.14190.pdf).
 
 ## Requirements:
 The code was written for python>=3.8, pytorch 1.11.0, and transformers 4.19.0. You will also need a few additional packages. Here's how you can set up the environment using conda:
 
 ```bash
-git clone https://github.com/balhafni/CrisisLTLSum.git
+git clone https://github.com/CrisisLTLSum/CrisisTimelines.git
 cd CrisisLTLSum
 
 conda create -n crisis_sum python=3.8
