@@ -62,6 +62,14 @@ For inference, take a look at [inference.sh](timeline-extraction/bert/inference.
 
 3) BERT-GRU Sequence Labeling: To run the BERT-GRU experiment, take a look at [train.sh](timeline-extraction/bert-lstm/train.sh) and for inference, take a look at [inference.sh](timeline-extraction/bert-lstm/inference.sh).
 
+#### Evaluation Results on the Test Set:
+
+
+|              | Accuracy     | 
+| -----------  | -----  | 
+| **BERT**     |   73.51    |
+| **Human**     |   **88.96**    |
+
 
 ### Timeline Summarization:
 Code to run experiments for the timeline summarization task can be found in [timeline-summarization](timeline-summarization).
@@ -71,6 +79,11 @@ Code to run experiments for the timeline summarization task can be found in [tim
 2) Fine-tuning BART/Distill-BART: To fine-tune BART or Distill-BART, take a look at [run_summarization.sh](timeline-summarization/run_summarization.sh)
 
 3) Inference: The inference could be run in two modes: a) Oracle; b) After timeline extraction.
+
+**Notes**: Since each timeline in our dataset is annotated by three workers, it includes three summaries. To reduce the variance between the summaries regarding their coverage of the crisis event described in the tweets that are part of the timeline, we pick the two summaries written by the
+two workers who agree the most based on the timeline extraction labels they assign to the tweets in each timeline. This preprocessing step is applied during training and evaluation (for both oracle and non-oracle experiments) and it's done in the [preprocess_timelines.py](timeline-summarization/preprocess_timelines.py) script.
+
+To run the fine-tuning experiments, you would need to run:
 
 ```bash
 
@@ -92,6 +105,14 @@ python run_summarization.py \
 
 More details on inference could be found in [generate.sh](timeline-summarization/generate.sh)
 
+#### Evaluation Results on the Test Set:
+
+We used [SacreROUGE](https://github.com/danieldeutsch/sacrerouge) to get multi-reference ROUGE scores. To run the evaluation on the test set, you need to run `python timeline-summarization/evaluate_rouge.py --gold data/test.gold.sum.json --preds /path/to/generated_summaries.txt`.
+
+
+|              | R1   |  R2  |  R3  |
+| -----------  | ----- | ---- | ---- |
+| **BART**         |   47.05    |  25.40    |  35.90    |
 
 ## License:
 This repo is available under the MIT license. See the [LICENSE](LICENSE) for more information.
