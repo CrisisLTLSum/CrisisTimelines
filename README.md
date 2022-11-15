@@ -99,4 +99,4 @@ This repo is available under the MIT license. See the [LICENSE](LICENSE) for mor
 
 
 ## Citations:
-If you find the code or data in this repo helpful, please cite [our paper]().
+If you find the code or data in this repo helpful, please cite [our paper](https://arxiv.org/pdf/2210.14190.pdf).
