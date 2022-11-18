@@ -110,7 +110,7 @@ More details on inference could be found in [generate.sh](timeline-summarization
 We used [SacreROUGE](https://github.com/danieldeutsch/sacrerouge) to get multi-reference ROUGE scores. To run the evaluation on the test set, you need to run `python timeline-summarization/evaluate_rouge.py --gold data/test.gold.sum.json --preds /path/to/generated_summaries.txt`.
 
 
-|              | R1   |  R2  |  R3  |
+|              | R1   |  R2  |  RL  |
 | -----------  | ----- | ---- | ---- |
 | **BART**         |   47.05    |  25.40    |  35.90    |
 
