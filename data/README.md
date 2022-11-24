@@ -26,3 +26,6 @@ with the following fields:
   - `Summary 3`: summary of the third worker.
   
   **Note**: the `seed` and the list of `tweets` are empty in this release as they contain the tweet text. To obtain the tweet texts, you need to run the `get_text.py` script.
+
+
+* `dev.gold.sum.json` and `test.gold.sum.json` contain the two summaries of the two workers who agree most in terms of their tweet annotation. We use these two files to evaluate our timeline summarization models.
