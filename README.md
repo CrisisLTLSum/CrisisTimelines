@@ -120,4 +120,23 @@ This repo is available under the MIT license. See the [LICENSE](LICENSE) for mor
 
 
 ## Citations:
-If you find the code or data in this repo helpful, please cite [our paper](https://arxiv.org/pdf/2210.14190.pdf).
+If you find the code or data in this repo helpful, please cite [our paper](https://arxiv.org/pdf/2210.14190.pdf):
+```bibtex
+@inproceedings{rajaby-faghihi-etal-2022-crisiltlsum,
+    title = "CrisisLTLSum: A Benchmark for Local Crisis Event Timeline Extraction
+and Summarization",
+    author = "Rajaby Faghihi, Hossein  and
+      Alhafni, Bashar  and
+      Zhang, Ke  and
+      Ran, Shihao  and
+      Tetreault, Joel  and
+      Jaimes, Alejandro",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2022",
+    month = dec,
+    year = "2022",
+    address = "Online and Abu Dhabi, United Arab Emirates",
+    publisher = "Association for Computational Linguistics",
+    abstract = "Social media has increasingly played a key role in emergency response: first responders can use public posts to better react to ongoing crisis events and deploy the necessary resources where they are most needed. Timeline extraction and abstractive summarization are critical technical tasks to leverage large numbers of social media posts about events. Unfortunately, there are few datasets for benchmarking technical approaches for those tasks. This paper presents CrisisLTLSum, the largest dataset of local crisis event timelines available to date. CrisisLTLSum contains 1,000 crisis event timelines across four domains: wildfires, local fires, traffic, and storms. We built CrisisLTLSum using a semi-automated clusterthen-refine approach to collect data from the public Twitter stream. Our initial experiments indicate a significant gap between the performance of strong baselines compared to the human performance on both tasks. Our dataset, code, and models are publicly available",
+}
+
+```
