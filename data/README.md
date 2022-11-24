@@ -25,4 +25,4 @@ with the following fields:
   - `Summary 2`: summary of the second worker.
   - `Summary 3`: summary of the third worker.
   
-  
+  **Note**: the `seed` and the list of `tweets` are empty in this release as they contain the tweet text. To obtain the tweet texts, you need to run the `get_text.py` script.
